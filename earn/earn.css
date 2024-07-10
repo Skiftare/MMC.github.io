@@ -1,0 +1,183 @@
+/* Reset and body styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Темный фон */
+    color: #ffffff; /* Светлый текст */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Container styling with Material You shadow */
+.container {
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    background-color: #1e1e1e; /* Темный фон контейнера */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.main-content {
+    width: 100%;
+    height: 100%;
+    /*border-radius: 28px;*/
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    background-color: #1e1e1e; /* Темный фон контейнера */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+/* Header styling with separation */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #272727; /* Темный фон хедера */
+    border-bottom: 1px solid #444;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /*border-radius: 28px 28px 0 0;*/
+}
+
+.time {
+    font-size: 14px;
+}
+
+.user-info {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.user-icon {
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+/* Main content styling */
+.balance {
+    font-size: 36px;
+    color: #f4d142; /* Золотистый текст */
+    margin: 10px 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #272727; /* Темный фон баланса */
+    align-self: center;
+}
+
+/* Clicker button styling with Material You shadow and animation */
+.clicker-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.clicker-button {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.1s;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 50%; /* Делает кнопку круглой */
+    padding: 20px;
+    background: url('image_2024-07-10_17-17-00.png') no-repeat center center; /* Используем картинку как фон */
+    background-size: cover; /* Масштабируем картинку, чтобы она покрывала всю кнопку */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+    border: none; /* Убираем белое выделение при клике */
+    outline: none; /* Убираем обводку при клике */
+}
+
+.clicker-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.clicker-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.clicker-text {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #f4d142; /* Золотистый текст */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.clicker-icon {
+    font-size: 48px;
+    color: #42a5f5; /* Синий текст */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation styles */
+@keyframes fly-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) scale(0.5);
+    }
+}
+
+
+.animated-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #f4d142;
+    border-radius: 50%;
+    opacity: 0;
+    animation: fly-out 1s ease forwards;
+}
+
+/* Footer styling with Material You icons */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: #272727; /* Темный фон футера */
+    border-top: 1px solid #444;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    /*border-radius: 0 0 28px 28px;*/
+}
+.clicker-button-pressed {
+    transform: scale(1.1);
+
+}
+
+
+.footer-item {
+    font-size: 20px;
+    color: #f4d142; /* Золотистый текст */
+    transition: color 0.2s;
+}
+
+.footer-item:hover {
+    color: #d1b837;
+}

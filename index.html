@@ -2,10 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Функция для проверки, является ли устройство мобильным
+            function isMobile() {
+                return /Mobi|Android/i.test(navigator.userAgent);
+            }
+
+            // Перенаправление на нужную страницу
+            if (isMobile()) {
+                window.location.href = "earn/earn.html";
+            } else {
+                window.location.href = "PC/pc.html";
+            }
+        });
+    </script>
 </head>
 <body>
-HI
-
+<!-- Пустое тело, так как пользователи сразу будут перенаправлены -->
 </body>
 </html>
