@@ -2,44 +2,50 @@ document.addEventListener('DOMContentLoaded', function() {
     const button = document.getElementById('clicker-button');
     const animationContainer = document.getElementById('animation-container');
 
-    button.addEventListener('click', function() {
-        // Добавляем класс при нажатии
+    button.addEventListener('click', function(event) {
         button.classList.add('clicker-button-pressed');
 
-
-        // Виброотклик
         if (navigator.vibrate) {
             navigator.vibrate(100);
         }
 
-        // Создаем 5 анимационных элементов
+        const rect = button.getBoundingClientRect();
+        const angle = Math.random() * (Math.PI / 3) - Math.PI / 6; // От -30 до +30 градусов
+        const distance = 100 + Math.random() * 200;
+        const x = Math.cos(angle) * distance;
+        const y = Math.sin(angle) * distance;
+
         for (let i = 0; i < 5; i++) {
-            createAnimatedElement();
+            createAnimatedElement(x, y);
         }
     });
 
-    // Удаляем класс при окончании анимации
     button.addEventListener('animationend', function() {
         button.classList.remove('clicker-button-pressed');
     });
 
-    function createAnimatedElement() {
-        const element = document.createElement('div');
-        element.classList.add('animated-element');
+    function createAnimatedElement(clickX, clickY) {
+        /*const element = document.createElement('div');
+        const shapes = ['circle', 'square', 'triangle'];
+        const shape = shapes[Math.floor(Math.random() * shapes.length)];
+        element.classList.add('animated-element', shape);
 
-        // Устанавливаем случайные начальные позиции внутри верхнего полукруга
-        const angle = Math.random() * Math.PI; // Угол от 0 до PI (верхний полукруг)
-        const radius = Math.random() * 100; // Радиус от 0 до 100px
-        const x = Math.cos(angle) * radius;
-        const y = Math.sin(angle) * radius;
+        // Определяем случайный угол в верхней трети окружности
+        const angle = Math.random() * (Math.PI / 3) - Math.PI / 6; // От -30 до +30 градусов
+        const distance = 100 + Math.random() * 200;
+        const x = Math.cos(angle) * distance;
+        const y = Math.sin(angle) * distance;
 
-        element.style.transform = translate(${x}px, ${y}px);
-
+        element.style.transform = `translate(${clickX}px, ${clickY}px)`;
         animationContainer.appendChild(element);
 
-        // Удаляем элемент после завершения анимации
-        element.addEventListener('animationend', function() {
+        setTimeout(() => {
+            element.style.transform = `translate(${clickX + x}px, ${clickY - Math.abs(y)}px)`;
+            element.style.opacity = '0'; // Элемент исчезает при завершении анимации
+        }, 10);
+
+        element.addEventListener('transitionend', function() {
             element.remove();
-        });
+        });*/
     }
 });

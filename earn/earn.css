@@ -171,7 +171,34 @@ body {
 
 }
 
-
+#animation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.animated-element {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    transition: transform 2s ease-out, opacity 2s ease-out;
+}
+.circle {
+    border-radius: 50%;
+    background-color: red;
+}
+.square {
+    background-color: blue;
+}
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid yellow;
+    background-color: transparent;
+}
 .footer-item {
     font-size: 20px;
     color: #f4d142; /* Золотистый текст */
