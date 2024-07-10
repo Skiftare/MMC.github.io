@@ -97,7 +97,7 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 50%; /* Делает кнопку круглой */
     padding: 20px;
-    background: url('image_2024-07-10_17-17-00.png') no-repeat center center; /* Используем картинку как фон */
+    background: url('image_2024-07-10_17-17-00-transformed.png') no-repeat center center; /* Используем картинку как фон */
     background-size: cover; /* Масштабируем картинку, чтобы она покрывала всю кнопку */
     display: flex;
     flex-direction: column;
